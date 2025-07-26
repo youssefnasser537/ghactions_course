@@ -3,11 +3,11 @@ name: first workflow
 on: 
   push:
     branches:
-      -main
+      - main
 jobs:
   example-job:
     runs-on: ubuntu-latest
     steps:
-      -name: print welcome msg
-      run: echo "welcome joo"
+      - name: print welcome msg
+        run: echo "welcome joo"
       
