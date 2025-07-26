@@ -11,4 +11,8 @@ jobs:
     steps:
       - name: print welcome msg
         run: echo "welcome joo"
+      - name: checkout repository
+        uses: actions/checkout@v4.2.2
+      - name: list repo files
+        run: ls -la
 
