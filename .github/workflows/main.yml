@@ -1,19 +1,13 @@
-name: Run Tests
+name: Daily Report
 
 on:
-  push:
-    branches: [main]
+  schedule:
+    - cron: '30 7 * * *'  # كل يوم الساعة 7:30 صباحًا UTC
 
 jobs:
-  test-job:
+  report-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: npm test
+      - name: Generate Report
+        run: echo "📊 Generating report on $(date)"
 
