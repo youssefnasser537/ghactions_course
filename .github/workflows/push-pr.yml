@@ -1,19 +1,23 @@
+name: Run Tests
+
 on:
-    push:
-        branches:
-            - main
-            - "release/**"
-        paths:
-            - "scr/**"
-    pull_request:
-        branches:
-            - main
-            - "release/**"
+  push:
+    branches:
+      - main
+      - "release/**"
+    paths:
+      - "src/**"   # ⛔ كنت كاتبها scr بدل src
+  pull_request:
+    branches:
+      - main
+      - "release/**"
+
 jobs:
-    test:
-        runs-on: ubuntu-latest
-        steps:
-            - name: checkout code
-              uses: actions/checkout@v4.2.2
-            - name: run tests
-              run: npm test
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.2.2
+
+      - name: Run tests
+        run: npm test
