@@ -3,7 +3,8 @@ on:
 
 jobs:
   deploy:
-   runs-on: ubuntu-latest
-   steps:
-    - name: Deploy application
-      run: echo "Deploying the application ... "|
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy application
+        run: echo "Deploying the application ... "|
+ 
