@@ -12,4 +12,5 @@ jobs:
     steps:
       - name: Echo message
         run: echo "✅ Workflow echo.yml triggered!"
-
+      - name: echo fixed issue 
+        run: echo "✅ fixed package.json"
