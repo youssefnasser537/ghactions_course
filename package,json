@@ -1,13 +1,11 @@
 {
-    "name": "simple-node-app",
-    "version": "1.0.0",
-    "description": "A simple Node.js app for GitHub Actions PR testing",
-    "main": "src/app.js",
-    
-    "scripts": {
-    "test": "bash src/test.sh"
-
-    "name": "simple-node-app",
-    },
-    "dependencies": {}
+  "name": "ghactions_course",
+  "version": "1.0.0",
+  "description": "Simple Node.js app for GitHub Actions test",
+  "main": "app.js",
+  "scripts": {
+    "test": "bash test.sh"
+  },
+  "author": "Yasser",
+  "license": "ISC"
 }

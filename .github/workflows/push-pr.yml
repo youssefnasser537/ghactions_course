@@ -1,23 +1,15 @@
-name: Run Tests
+name: Echo Job
 
 on:
   push:
-    branches:
-      - main
-      - "release/**"
-    paths:
-      - "src/**"   # ⛔ كنت كاتبها scr بدل src
+    branches: [main]
   pull_request:
-    branches:
-      - main
-      - "release/**"
+    branches: [main]
 
 jobs:
-  test:
+  echo-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4.2.2
+      - name: Echo message
+        run: echo "✅ Workflow echo.yml triggered!"
 
-      - name: Run tests
-        run: npm test

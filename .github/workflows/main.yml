@@ -1,18 +1,19 @@
-name: first workflow
+name: Run Tests
 
-on: 
+on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  example-job:
+  test-job:
     runs-on: ubuntu-latest
     steps:
-      - name: print welcome msg
-        run: echo "welcome joo"
-      - name: checkout repository
-        uses: actions/checkout@v4.2.2
-      - name: list repo files
-        run: ls -la
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
 

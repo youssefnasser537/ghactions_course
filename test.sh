@@ -1,16 +1,5 @@
 #!/bin/bash
 
-#src/test.sh
-EXPECTED="Hello, Test!"
-OUTPUT=$(node -e "console. log( require('./src/app') ( 'Test' ) )")
-if [ "$OUTPUT" == "$EXPECTED" ]; then
-echo "Test passed!"
+echo "Running test..."
 
-exit 0
-
-else
-
-echo "X Test failed! Expected '$EXPECTED' but got 'SOUTPUT'"
-exit 1
-
-fi
+node -e "const add = require('./app'); if (add(2, 3) !== 5) { console.error('❌ Test failed'); process.exit(1); } else { console.log('✅ Test passed'); }"

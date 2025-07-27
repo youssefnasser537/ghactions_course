@@ -1,11 +1,5 @@
-function greet(name) {
-return 'Hello, ${name}!';
+function add(a, b) {
+  return a + b;
 }
-module. exports = greet; // Ensure function is exportable
-// If run directly, print output (useful for debugging)
 
-if (require.main === module) {
-
-console.log(greet("World"));
-console.log("Hello world updated!");
-}
+module.exports = add;
