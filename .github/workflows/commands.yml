@@ -9,5 +9,5 @@ jobs:
         run: |
           deprecated=true
           if [[ "$deprecated" == "true" ]]; then
-            echo "warning: deprecated found"
+            echo "::warning:: deprecated found"
           fi
