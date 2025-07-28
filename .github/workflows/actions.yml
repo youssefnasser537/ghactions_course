@@ -1,0 +1,26 @@
+on:
+  workflow_dispatch:
+    
+jobs:
+  actions-job:
+     runs-on: ubuntu-latest
+     steps:
+       - name: run command in vm 
+         run: echo "runs on ubuntu vm"
+       - name: run inside an alpine container
+         uses: docker://alpine:3.14
+         with:
+           entrypoint: /bin/sh
+           args: |
+             - -c
+             - |
+               echo "run inside an alpine container"
+       -  name: run another command in ubuntu-latest
+          run: echo "back to vm"
+  dockerized_job:
+      runs-on: ubuntu-latest
+      container: node:20
+      steps:
+        - run: node --version
+        - run: echo "runs on node.js"
+        
