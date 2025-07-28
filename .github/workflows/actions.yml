@@ -2,25 +2,17 @@ on:
   workflow_dispatch:
     
 jobs:
-  actions-job:
-     runs-on: ubuntu-latest
-     steps:
-       - name: run command in vm 
-         run: echo "runs on ubuntu vm"
-       - name: run inside an alpine container
-         uses: docker://alpine:3.14
-         with:
-           entrypoint: /bin/sh
-           args: |
-             - -c
-             - |
-               echo "run inside an alpine container"
-       -  name: run another command in ubuntu-latest
-          run: echo "back to vm"
-  dockerized_job:
-      runs-on: ubuntu-latest
-      container: node:20
-      steps:
-        - run: node --version
-        - run: echo "runs on node.js"
+  job_1:
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node_version: [14.x, 15.x, 16.x]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/setup-node@v3.6.0
+        with:
+          node-version: ${{ matrix.node_version }}
+
         
