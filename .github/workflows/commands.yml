@@ -1,0 +1,13 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check deprecated
+        run: |
+          deprecated=true
+          if [[ "$deprecated" == "true" ]]; then
+            echo "warning: deprecated found"
+          fi
